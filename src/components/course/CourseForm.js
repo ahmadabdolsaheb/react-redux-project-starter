@@ -11,8 +11,7 @@ const CourseForm = ({course, allAuthors, onSave, onChange, loading, errors}) => 
             label="Title"
             value={course.title}
             onChange={onChange}
-            error={errors.title}
-          />
+            error={errors.title}/>
           <SelectInput
               name="authorId"
               label="Author"
@@ -20,29 +19,25 @@ const CourseForm = ({course, allAuthors, onSave, onChange, loading, errors}) => 
               onChange={onChange}
               defaultOption="Select Author"
               options={allAuthors}
-              error={errors.authorId}
-          />
+              error={errors.authorId}/>
           <TextInput
               name="category"
               label="Category"
               value={course.category}
               onChange={onChange}
-              error={errors.category}
-          />
+              error={errors.category}/>
           <TextInput
               name="length"
               label="Length"
               value={course.length}
               onChange={onChange}
-              error={errors.length}
-          />
+              error={errors.length}/>
           <input
               type="submit"
               disabled={loading}
               value={loading ? 'Saving... ' : 'Save'}
               className="btn btn-primary"
-              onClick={onSave}
-          />
+              onClick={onSave}/>
       </form>
   );
 };
