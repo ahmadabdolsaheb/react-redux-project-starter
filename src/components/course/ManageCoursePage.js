@@ -14,11 +14,10 @@ class ManageCoursePage extends React.Component {
   }
 
   render(){
-    console.log("author: "+ this.props.author)
     return (
       <CourseForm
         course={this.state.course}
-        allAuthors={[]}
+        allAuthors={this.props.authors}
         errors={this.state.errors}
         />
     );
@@ -42,7 +41,7 @@ function mapStateToProps(state, ownProps) {
 
   return {
     course: course,
-    author:authorsFormattedForDropDown
+    authors: authorsFormattedForDropDown
   };
 }
 
@@ -52,4 +51,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapDispatchToProps, mapDispatchToProps)(ManageCoursePage);
+export default connect(mapStateToProps, mapDispatchToProps)(ManageCoursePage);
